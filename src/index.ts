@@ -10,11 +10,15 @@ class Person {
         this.height = height
         this.weight = weight
     }
+
+    sayName() {
+        console.log(`My name is ${this.name}`)
+    }
 }
 
 const person1 = new Person("Rian", 20, 1.80, 80)
 
-console.log(`PESSOA --- Nome: ${person1.name}, age: ${person1.age} years old, height: ${person1.height}tall, weight: ${person1.weight}kg`)
+console.log(`PERSON --- Name: ${person1.name}, age: ${person1.age} years old, height: ${person1.height}tall, weight: ${person1.weight}kg`)
 
 
 class Athlete extends Person{
@@ -26,9 +30,16 @@ class Athlete extends Person{
         this.sport = sport
         this.modality = modality
     }
+
+    saySport() {
+       console.log(`I pratice ${this.sport}`)
+   }
 }
 
 const athlete1 = new Athlete("Rian", 20, 1.80, 80, "football", "field football")
 console.log(
-  `ATHLETE --- Nome: ${athlete1.name}, age: ${athlete1.age} years old, height: ${athlete1.height}tall, weight: ${athlete1.weight}kg, Sport: ${athlete1.sport}, Modality: ${athlete1.modality}'}`
+  `ATHLETE --- Name: ${athlete1.name}, age: ${athlete1.age} years old, height: ${athlete1.height}tall, weight: ${athlete1.weight}kg, Sport: ${athlete1.sport}, Modality: ${athlete1.modality}'}`
 );
+
+athlete1.sayName()
+athlete1.saySport()
