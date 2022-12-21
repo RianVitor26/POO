@@ -1,10 +1,10 @@
 import { Message } from "./Message"
 
 class Person {
-    name: string = ""
-    age: number = 0
-    height: number = 0
-    weight: number = 0
+    private name: string = ""
+    private age: number = 0
+    protected height: number = 0
+     private weight: number = 0
 
     constructor(name: string, age: number, height: number, weight: number) {
         this.name = name
@@ -20,11 +20,30 @@ class Person {
     pratice(): void {
         console.log(`I gonna pratice!`) 
     }
+
+    get _weight (): number {
+        return this.weight
+    }
+    get _height(): number {
+        return this.height
+    }
+
+    get _age(): number {
+        return this.age
+    }
+
+    get _name(): string {
+        return this.name
+    }
+
+    set _name(newName: string) {
+        this.name = newName
+    }
 }
 
 const person1 = new Person("Rian", 20, 1.80, 80)
 
-console.log(`PERSON --- Name: ${person1.name}, age: ${person1.age} years old, height: ${person1.height}tall, weight: ${person1.weight}kg`)
+console.log(`PERSON --- Name: ${person1._name}, age: ${person1._age} years old, height: ${person1._height}tall, weight: ${person1._weight}kg`)
 
 
 class Athlete extends Person{
@@ -37,7 +56,7 @@ class Athlete extends Person{
         this.modality = modality
     }
 
-    saySport() {
+    saySport(): void {
        console.log(`I pratice ${this.sport}`)
     }
     
@@ -48,7 +67,7 @@ class Athlete extends Person{
 
 const athlete1 = new Athlete("Rian", 20, 1.80, 80, "football", "field football")
 console.log(
-  `ATHLETE --- Name: ${athlete1.name}, age: ${athlete1.age} years old, height: ${athlete1.height}tall, weight: ${athlete1.weight}kg, Sport: ${athlete1.sport}, Modality: ${athlete1.modality}'}`
+  `ATHLETE --- Name: ${athlete1._name}, age: ${athlete1._age} years old, height: ${athlete1._height}tall, weight: ${athlete1._weight}kg, Sport: ${athlete1.sport}, Modality: ${athlete1.modality}'}`
 );
 
 athlete1.sayName()
@@ -60,3 +79,6 @@ message1.showMessage()
 
 person1.pratice()
 athlete1.pratice()
+
+person1._name = "Rian Vitor"
+console.log(person1._name)

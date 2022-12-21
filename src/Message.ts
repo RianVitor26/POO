@@ -4,7 +4,7 @@ export class Message {
         this.message = message
     }
 
-    showMessage() {
+    showMessage(): void {
         console.log(this.message)
     }
 }
