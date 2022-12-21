@@ -13,8 +13,12 @@ class Person {
         this.weight = weight
     }
 
-    sayName() {
+    sayName(): void {
         console.log(`My name is ${this.name}`)
+    }
+
+    pratice(): void {
+        console.log(`I gonna pratice!`) 
     }
 }
 
@@ -25,7 +29,7 @@ console.log(`PERSON --- Name: ${person1.name}, age: ${person1.age} years old, he
 
 class Athlete extends Person{
     sport: string = ""
-    modality: string = ""
+    modality: string = "" 
 
     constructor(name: string, age: number, height: number, weight: number, sport:string, modality:string) {
         super(name, age, height, weight)
@@ -35,7 +39,11 @@ class Athlete extends Person{
 
     saySport() {
        console.log(`I pratice ${this.sport}`)
-   }
+    }
+    
+    pratice(): void {
+        console.log(`I gonna pratice more than you!`)
+    }
 }
 
 const athlete1 = new Athlete("Rian", 20, 1.80, 80, "football", "field football")
@@ -49,3 +57,6 @@ athlete1.saySport()
 
 const message1 = new Message("Hello, world!");
 message1.showMessage()
+
+person1.pratice()
+athlete1.pratice()
