@@ -1,3 +1,5 @@
+import { Message } from "./Message"
+
 class Person {
     name: string = ""
     age: number = 0
@@ -43,3 +45,7 @@ console.log(
 
 athlete1.sayName()
 athlete1.saySport()
+
+
+const message1 = new Message("Hello, world!");
+message1.showMessage()
